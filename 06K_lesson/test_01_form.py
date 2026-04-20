@@ -18,6 +18,7 @@ def driver():
     driver.quit()
 
 
+
 def test_form_submission(driver):
 
     driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
