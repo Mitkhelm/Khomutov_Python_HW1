@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 from selenium.webdriver.common.keys import Keys
 
+
 def test_shop():
     driver = webdriver.Firefox()
     wait = WebDriverWait(driver, 10)
