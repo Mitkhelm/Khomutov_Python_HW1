@@ -27,16 +27,12 @@ def test_shop(browser):
    buy.go_to_cart()
    buy.push_checkout()
 
-   checkout = CartPage(browser)   
-
+   checkout = CartPage(browser)
    checkout.first_name("Игорь")
    checkout.last_name("Хомутов")
    checkout.zip("123456")
    checkout.next()
    checkout.total_cost()
 
-   browser.quit()
-      
-   assert "$58.29"
 
    

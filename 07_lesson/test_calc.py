@@ -17,4 +17,3 @@ def test_calc(driver):
   page.press_button()
   page.wait_for_result()
   
-  assert "15"

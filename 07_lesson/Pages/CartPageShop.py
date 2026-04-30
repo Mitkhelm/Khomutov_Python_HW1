@@ -14,7 +14,7 @@ class CartPage:
         self.my_first_name = (By.ID, "first-name")
         self.my_last_name = (By.ID, "last-name")
         self.my_zip = (By.ID, "postal-code")
-    
+        self.result = (By.CSS_SELECTOR, "div.summary_total_label")   
 
     def first_name(self, query):
         my_first_name_element = self._driver.find_element(By.ID, "first-name")
@@ -32,6 +32,7 @@ class CartPage:
         self._driver.find_element(By.ID, "continue").click()
 
     def total_cost(self):
-        total = self._driver.find_element(By.CSS_SELECTOR, "div.summary_total_label").text
-        assert "$58.29" == (total.split(':')[1].strip())
-        print(total)
+        WebDriverWait(self._driver, 7).until(
+            EC.text_to_be_present_in_element((self.result), "$58.29")
+            )
+        return self._driver.find_element(By.CSS_SELECTOR, "div.summary_total_label").text 

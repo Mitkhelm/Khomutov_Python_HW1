@@ -37,3 +37,4 @@ class MainPageCalc:
             EC.text_to_be_present_in_element((self.results_selector), "15")
             )
         return self._driver.find_element(By.CSS_SELECTOR, ".screen")
+    
